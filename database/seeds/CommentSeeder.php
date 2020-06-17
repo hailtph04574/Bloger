@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\Model\Comment;
 class CommentSeeder extends Seeder
 {
     /**
@@ -11,6 +11,17 @@ class CommentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $faker = Faker\Factory::create();
+        // dd($faker->creditCardType());
+        for ($i = 0 ; $i < 10 ; $i++) { 
+            $item = [
+                'post_id' => rand(1, 10),
+                'content' => $faker->sentence(),
+                'user_id' => rand(1,10),
+                'is_active' => 1
+            ];
+            Comment::create($item);
+            // dd(Comment::create($item));
+        }
     }
 }
