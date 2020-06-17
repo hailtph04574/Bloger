@@ -17,7 +17,7 @@ class User extends Model
         'is_active',
     ];
     public function posts(){
-        return $this->belongsTo(Post::class,'user_id','post_id');
+        return $this->hasMany(Post::class,'post_id','user_id');
     }
     public function comments(){
         return $this->hasMany(Comment::class,'user_id','comment_id');

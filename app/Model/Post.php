@@ -12,12 +12,12 @@ class Post extends Model
         'content',
     ];
     public function users(){
-        return $this->hasMany('post_id','user_id');
+        return $this->belongsTo(User::class,'post_id');
     }
     public function categorys(){
-        return $this->belongsTo('post_id','cate_id');
+        return $this->hasMany(Category::class,'post_id','cate_id');
     }
     public function comments(){
-        return $this->hasMany('post_id','comment_id');
+        return $this->hasMany(Comment::class,'post_id','comment_id');
     }
 }

@@ -11,6 +11,6 @@ class Category extends Model
         'cate_name',
     ];
     public function users(){
-        return $this->belongsTo('user_id');
+        return $this->belongsToMany('user_id');
     }
 }
