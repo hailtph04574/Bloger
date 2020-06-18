@@ -35,3 +35,21 @@ Route::get('/admin', function(){
         'comment'=> $comment,
         ]);
 })->name('admin.index');
+
+Route::get('/admin/user',function(){
+    return view('admin.user.index');
+})->name('user.index');
+
+Route::get('/admin/category',function(){
+    return view('admin.user.index');
+})->name('category.index');
+
+Route::get('/admin/comment',function(){
+    return view('admin.user.index');
+})->name('comment.index');
+
+Route::get('/admin/post',function(){
+    return view('admin.user.index');
+})->name('post.index');
+
+
