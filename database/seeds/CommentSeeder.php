@@ -13,9 +13,9 @@ class CommentSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         // dd($faker->creditCardType());
-        for ($i = 0 ; $i < 10 ; $i++) { 
+        for ($i = 0 ; $i < 5 ; $i++) {
             $item = [
-                'post_id' => rand(1, 10),
+                'post_id' => rand(1,5),
                 'content' => $faker->sentence(),
                 'user_id' => rand(1,10),
                 'is_active' => 1

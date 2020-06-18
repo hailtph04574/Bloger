@@ -1,0 +1,263 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+body{
+	background-image: url("../img/outlast2.jpg");
+	background-repeat: repeat-y;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+
+header{
+	width: 100%;
+	background-color: #111111;
+	height: 85px;
+}
+#menu{
+	max-width: 960px;
+	margin: auto;
+}
+#slogan{
+	float: left;
+	color: #fff;
+	margin-top: 20px;
+	font-family: ProximaNovaBold;
+}
+nav {
+	/* background: #fff; */
+	line-height: 85px;
+	display: flex;
+	float: right;
+	/* justify-content: space-around; */
+}
+nav ul {
+	list-style: none;
+	display: flex;
+}
+nav ul li a{
+	display: inline-block;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: black;
+	position: relative;
+	/* margin-top: 5%; */
+	color: #fff;
+	font-family: ProximaNovaBold;
+}
+
+nav ul li a::before {
+	content: '';
+	width: 0%;
+	height: 5px;
+	position: absolute;
+	top: 70%;
+	left: 0;
+	background: #7CFC00;
+	transition: .3s;
+}
+nav ul li a:hover::before {
+	width: 35%;
+	transform: translate(100%);
+}
+#slider {
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+	position: relative;
+}
+#slider ul {
+	list-style: none;
+	width: 600%;
+
+}
+#slider ul li {
+	width: 16.666%;
+	float: left;
+}
+#slider ul li img {
+	width: 100%;
+	height: 675px;
+	opacity: 0.95;
+}
+.next, .pre {
+	position: absolute;
+	display: block;
+	color: #fff;
+	font-size: 30px;
+}
+.next {
+	top: 305px;
+	right: 15px;
+}
+.pre {
+	top: 305px;
+	left: 15px;
+}
+#content{
+	max-width: 980px;
+	margin: 50px auto;
+}
+#column img{
+	height: 220px;
+	width: 100%;
+}
+#column a{
+	color: #fff;
+	opacity: 0.8;
+}
+#column b{
+	font-family: arrusb !important;
+	font-size: 15px !important;
+}
+#column a:hover{
+	opacity: 1;
+}
+#column{
+	border: 1px solid#999;
+	height: 350px;
+	margin-top: 30px;
+	text-align: center;
+	background-color: #111;
+}
+
+#column:hover{
+	border: 1.5px solid #059;
+}
+#column hr{
+	margin: 15px 0 10px 0;
+}
+
+#tieude{
+	margin: auto;
+	margin-top: 20px;
+	width: 300px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: ProximaNovaBold;
+}
+#tieude a{
+	color: #fff;
+}
+
+
+#column1{
+	border: 1px solid#999;
+	width: 31%;
+	height: 350px;
+	margin-left: 21px;
+	float: left;
+	margin-top: 80px;
+	text-align: center;
+	background-color: #000;
+}
+#column1:hover{
+	border: 1.5px solid #059;
+}
+#column1 hr{
+	margin: 15px 0 10px 0;
+}
+#column1 img{
+	height: 220px;
+	width: 100%;
+}
+#column1 a{
+	color: #fff;
+	opacity: 0.8;
+}
+#column1 a:hover{
+	opacity: 1;
+}
+.tieude1{
+	margin-top: 50px;
+	color: #fff;
+}
+#tiep{
+	background-color: #fff;
+	margin: auto;
+	margin-top: 30px;
+	text-align: center;
+	height: 30px;
+	border-radius: 10px;
+	width: 500px;
+}
+#tiep a{
+	padding: 10px 20px;
+	color: #000;
+	line-height: 30px;
+	font-size: 18px;
+	font-family: ProximaNovaExtraBold;
+}
+#tiep a:hover{
+	opacity: .5;
+}
+
+footer{
+	width: 100%;
+	height: 200px;
+	margin-top: 50px;
+	background-color: #000000;
+}
+#link{
+	float: left;
+	margin-top: 20px;
+	width: 20%;
+	color: #ccc;
+	
+}
+#link a{
+	color: #ccc;
+	line-height: 30px;
+	font-family: proximanova-regularitalic;
+	font-size: 14px;
+}
+#link a:hover{
+	color: #505050;
+}
+#alllink{
+	width: 900px;
+	margin: auto;
+}
+#lienhe{
+	padding: 50px 0 0 1030px;
+}
+#lienhe i{
+	margin-left: 10px;
+}
+footer h2{
+	font-family: ProximaNovaBold;
+	font-size: 16px;
+}
+#quyen{
+	background: #000;
+	height: 50px;
+	text-align: center;
+	color: #ccc;
+	line-height: 50px;
+	font-size: 13px;
+	font-family: arial;
+}
+#myBtn {
+	display: none; 
+	position: fixed;
+	bottom: 80px;
+	right: 40px; 
+	font-size: 30px;
+	border: none;
+	outline: none;
+	background-color: #181818;
+	color: white;
+	cursor: pointer;
+	padding: 5px 12px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px #fff;
+}
+ 
+#myBtn:hover {
+  opacity: 0.7;
+}

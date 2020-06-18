@@ -1,0 +1,156 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+@font-face {
+	font-family:ProximaNovaBold;
+	src:url("font/Proxima Nova Bold.otf");
+}
+@font-face {
+	font-family:ProximaNovaExtraBold;
+	src:url("font/Proxima Nova Extra Condensed Bold.otf");
+}
+@font-face {
+	font-family:proximanova-semibold;
+	src:url("font/proximanova-semibold.otf");
+}
+@font-face {
+	font-family:proximanova-regularitalic;
+	src:url("font/proximanova-regularitalic.otf");
+}
+@font-face {
+	font-family:proximanova-lightitalic;
+	src:url("font/proximanova-lightitalic.otf");
+}
+
+/*header*/
+header{
+	width: 100%;
+	background-color: #111111;
+	height: auto;
+}
+nav {
+	background:  #111111;
+	display: flex;
+
+}
+/* nav a{
+	padding: 10px 20px;
+	color: #fff;
+	margin-right: 15px;
+	font-family: ProximaNovaBold;
+}
+nav a:hover{
+	background-color: #fff;
+	color: black;
+	text-decoration: none;
+	border-radius: 5px;
+} */
+nav ul {
+	list-style: none;
+	display: flex;
+}
+nav ul li a{
+	display: inline-block;
+	padding: 10px 20px;
+	text-decoration: none !important;
+	color: black;
+	position: relative;
+	/* margin-top: 5%; */
+	color: #fff;
+	font-family: ProximaNovaBold;
+
+}
+
+nav ul li a::before {
+	content: '';
+	width: 0%;
+	height: 5px;
+	position: absolute;
+	top: 95%;
+	left: 0;
+	background: #7CFC00;
+	transition: .3s;
+	text-decoration: none;
+}
+nav ul li a:hover::before {
+	width: 35%;
+	transform: translate(100%);
+}
+@media (max-width: 768px) {
+  	nav a:hover{
+		background-color: #111111;
+		color: #fff;
+		text-decoration: underline;
+	}
+}
+#slogan{
+	margin-top: 15px;
+	color: #fff;
+	font-family: ProximaNovaBold;
+}
+
+/*footer*/
+footer{
+	width: 100%;
+	background-color: #000000;
+}
+footer h2{
+	font-family: ProximaNovaBold;
+	font-size: 16px;
+}
+#link a{
+	color: #ccc;
+	line-height: 30px;
+	font-family: proximanova-regularitalic;
+	font-size: 14px;
+	text-decoration: none;
+}
+#link a:hover{
+	color: #505050;
+}
+@media (min-width: 768px) {
+  #footer {
+    margin-left: 50px;
+  }
+}
+@media (min-width: 1024px) {
+  #footer {
+    margin-left: 120px;
+  }
+}
+#role{
+	background: #000;
+	line-height: 50px;
+	font-size: 13px;
+}
+#backtotop {
+	display: none; 
+	position: fixed;
+	bottom: 80px;
+	right: 40px; 
+	font-size: 30px;
+	border: none;
+	outline: none;
+	background-color: #181818;
+	color: white;
+	cursor: pointer;
+	padding: 0px 12px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px #fff;
+}
+
+@media (max-width: 576px) {
+  #backtotop {
+    bottom: 35px;
+	right: 15px; 
+	font-size: 15px;
+	padding: 3px 8px;
+  }
+}
+
+#backtotop:hover {
+ 	 opacity: 0.7;
+}
