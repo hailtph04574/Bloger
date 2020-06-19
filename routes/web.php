@@ -45,20 +45,47 @@ Route::get('/admin', function(){
         ]);
 })->name('admin.index');
 
-Route::get('/admin/user',function(){
-    return view('admin.user.index');
-})->name('user.index');
+Route::group(['prefix' => 'admin/'], function(){
 
-Route::get('/admin/category',function(){
-    return view('admin.user.index');
-})->name('category.index');
+    Route::group(['prefix' => 'user'],function(){
+        Route::get('/','UserController@index')->name('user.index');
+        Route::get('show','UserController@show')->name('user.show');
+        Route::get('create','UserController@create')->name('user.create');
+        Route::get('stote','UserController@stote')->name('user.stote');
+        Route::get('edit','UserController@edit')->name('user.edit');
+        Route::get('update','UserController@update')->name('user.update');
+    });
 
-Route::get('/admin/comment',function(){
-    return view('admin.user.index');
-})->name('comment.index');
+    Route::group(['prefix' => 'category'],function(){
+        Route::get('/','CategoryController@index')->name('category.index');
+        Route::get('show','CategoryControllerController@show')->name('category.show');
+        Route::get('create','CategoryControllerController@create')->name('category.create');
+        Route::get('stote','CategoryControllerController@stote')->name('category.stote');
+        Route::get('edit','CategoryControllerController@edit')->name('category.edit');
+        Route::get('update','CategoryControllerController@update')->name('category.update');
+    });
+    
+    Route::group(['prefix' => 'comment'],function(){
+        Route::get('/','CommentController@index')->name('comment.index');
+        Route::get('show','CommentControllerController@show')->name('comment.show');
+        Route::get('create','CommentControllerController@create')->name('comment.create');
+        Route::get('stote','CommentControllerController@stote')->name('comment.stote');
+        Route::get('edit','CommentControllerController@edit')->name('comment.edit');
+        Route::get('update','CommentControllerController@update')->name('comment.update');
+    });
 
-Route::get('/admin/post',function(){
-    return view('admin.user.index');
-})->name('post.index');
+    Route::group(['prefix' => 'post'],function(){
+        Route::get('/','PostController@index')->name('post.index');
+        Route::get('show','PostControllerController@show')->name('post.show');
+        Route::get('create','PostControllerController@create')->name('post.create');
+        Route::get('stote','PostControllerController@stote')->name('post.stote');
+        Route::get('edit','PostControllerController@edit')->name('post.edit');
+        Route::get('update','PostControllerController@update')->name('post.update');
+    });
+    
+    
+});
+
+
 
 
