@@ -18,7 +18,16 @@ use App\Model\Comment;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = User::all();
+    $post = Post::all();
+    $category = Category::all();
+    $comment = Comment::all();
+    return view('welcome',[
+        'user'=> $user,
+        'post'=> $post,
+        'category'=> $category,
+        'comment'=> $comment,
+        ]);
 });
 Route::get('/admin', function(){
     $test = User::with(['posts','comments','categorys'])->get();
