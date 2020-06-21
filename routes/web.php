@@ -18,10 +18,13 @@ use App\Model\Comment;
 */
 
 Route::get('/', function () {
+    $test = User::with(['post','category','comment'])->get();
+    dd($test);
     $user = User::all();
     $post = Post::all();
     $category = Category::all();
     $comment = Comment::all();
+    // dd($user);
     return view('welcome',[
         'user'=> $user,
         'post'=> $post,
@@ -30,8 +33,7 @@ Route::get('/', function () {
         ]);
 });
 Route::get('/admin', function(){
-    $test = User::with(['posts','comments','categorys'])->get();
-    // dd($test);
+    
     $user = User::all();
     $post = Post::all();
     $category = Category::all();
@@ -51,36 +53,40 @@ Route::group(['prefix' => 'admin/'], function(){
         Route::get('/','UserController@index')->name('user.index');
         Route::get('show','UserController@show')->name('user.show');
         Route::get('create','UserController@create')->name('user.create');
-        Route::get('stote','UserController@stote')->name('user.stote');
+        Route::get('stote','UserController@stote')->name('user.save');
         Route::get('edit','UserController@edit')->name('user.edit');
         Route::get('update','UserController@update')->name('user.update');
+        Route::get('delete','UserController@update')->name('user.delete');
     });
 
     Route::group(['prefix' => 'category'],function(){
         Route::get('/','CategoryController@index')->name('category.index');
-        Route::get('show','CategoryControllerController@show')->name('category.show');
-        Route::get('create','CategoryControllerController@create')->name('category.create');
-        Route::get('stote','CategoryControllerController@stote')->name('category.stote');
-        Route::get('edit','CategoryControllerController@edit')->name('category.edit');
-        Route::get('update','CategoryControllerController@update')->name('category.update');
+        Route::get('show','CategoryController@show')->name('category.show');
+        Route::get('create','CategoryController@create')->name('category.create');
+        Route::get('stote','CategoryController@stote')->name('category.save');
+        Route::get('edit','CategoryController@edit')->name('category.edit');
+        Route::get('update','CategoryController@update')->name('category.update');
+        Route::get('delete','CategoryController@update')->name('category.delete');
     });
     
     Route::group(['prefix' => 'comment'],function(){
         Route::get('/','CommentController@index')->name('comment.index');
-        Route::get('show','CommentControllerController@show')->name('comment.show');
-        Route::get('create','CommentControllerController@create')->name('comment.create');
-        Route::get('stote','CommentControllerController@stote')->name('comment.stote');
-        Route::get('edit','CommentControllerController@edit')->name('comment.edit');
-        Route::get('update','CommentControllerController@update')->name('comment.update');
+        Route::get('show','CommentController@show')->name('comment.show');
+        Route::get('create','CommentController@create')->name('comment.create');
+        Route::get('stote','CommentController@stote')->name('comment.save');
+        Route::get('edit','CommentController@edit')->name('comment.edit');
+        Route::get('update','CommentController@update')->name('comment.update');
+        Route::get('delete','CommentController@update')->name('comment.delete');
     });
 
     Route::group(['prefix' => 'post'],function(){
         Route::get('/','PostController@index')->name('post.index');
-        Route::get('show','PostControllerController@show')->name('post.show');
-        Route::get('create','PostControllerController@create')->name('post.create');
-        Route::get('stote','PostControllerController@stote')->name('post.stote');
-        Route::get('edit','PostControllerController@edit')->name('post.edit');
-        Route::get('update','PostControllerController@update')->name('post.update');
+        Route::get('show','PostController@show')->name('post.show');
+        Route::get('create','PostController@create')->name('post.create');
+        Route::get('stote','PostController@stote')->name('post.save');
+        Route::get('edit','PostController@edit')->name('post.edit');
+        Route::get('update','PostController@update')->name('post.update');
+        Route::get('delete','PostController@update')->name('post.delete');
     });
     
     

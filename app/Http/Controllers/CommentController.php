@@ -24,4 +24,7 @@ class CommentController extends Controller
     public function update(){
         return 'POST update lại thông tin vào DB admin/comment/update{$id}';
     }
+    public function delete(){
+        return 'POST xóa vào DB admin/comment/delete{$id}';
+    }
 }

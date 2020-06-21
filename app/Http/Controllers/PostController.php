@@ -24,4 +24,7 @@ class PostController extends Controller
     public function update(){
         return 'POST update lại thông tin vào DB admin/post/update{$id}';
     }
+    public function delete(){
+        return 'POST xóa vào DB admin/post/delete{$id}';
+    }
 }

@@ -16,13 +16,13 @@ class User extends Model
         'role',
         'is_active',
     ];
-    public function posts(){
-        return $this->hasMany(Post::class,'post_id','user_id');
+    public function post(){
+        return $this->hasMany(Post::class,'user_id','post_id');
     }
-    public function comments(){
+    public function comment(){
         return $this->hasMany(Comment::class,'user_id','comment_id');
     }
-    public function categorys(){
-        return $this->hasMany(Category::class,'user_id');
+    public function category(){
+        return $this->hasMany(Category::class,'user_id','category_id');
     }
 }

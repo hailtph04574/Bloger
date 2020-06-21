@@ -24,4 +24,7 @@ class CategoryController extends Controller
     public function update(){
         return 'POST update lại thông tin vào DB admin/category/update{$id}';
     }
+    public function delete(){
+        return 'POST xóa vào DB category/user/delete{$id}';
+    }
 }

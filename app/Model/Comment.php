@@ -11,11 +11,12 @@ class Comment extends Model
         'content',
         'is_active',
     ];
-    public function posts(){
-        return $this->belongsToMany(Post::class,'post_id');
+    public function user(){
+        return $this->belongsTo(User::class,'user_id');
     }
-    public function users(){
-        return $this->belongsToMany(User::class,'user_id');
+    public function post(){
+        return $this->belongsTo(Post::class,'post_id');
     }
+    
     
 }

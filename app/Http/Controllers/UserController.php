@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Model\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index(){
-        return 'Day la index admin/user';
+        $user = User::all();
+        return view('admin.user.index',[
+            'user'=> $user
+        ]);
     }
     public function show(){
         return 'GET Giao diện hiển thị chi tiết 1 user admin/user/show/{?id}';
@@ -23,5 +26,8 @@ class UserController extends Controller
     }
     public function update(){
         return 'POST update lại thông tin vào DB admin/user/update{$id}';
+    }
+    public function delete(){
+        return 'POST xóa vào DB admin/user/delete{$id}';
     }
 }

@@ -10,7 +10,10 @@ class Category extends Model
     protected $fillable = [
         'cate_name',
     ];
-    public function users(){
-        return $this->belongsToMany('user_id');
+    public function user(){
+        return $this->belongsTo('user_id');
+    }
+    public function post(){
+        return $this->hasMany('cate_id','post_id');
     }
 }
