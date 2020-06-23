@@ -19,7 +19,7 @@ use App\Model\Comment;
 
 Route::get('/', function () {
     $test = User::with(['post','category','comment'])->get();
-    dd($test);
+    // dd($test);
     $user = User::all();
     $post = Post::all();
     $category = Category::all();

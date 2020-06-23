@@ -7,6 +7,11 @@
     </div>
     <div class="card-body border-bottom py-3">
       <div class="d-flex">
+        <div class="mx-2 d-inline-block">
+          <a class="btn btn-info" href="{{ route('user.create') }}">
+            <span><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></span>
+          Add New User</a>
+          </div>
         <div class="text-muted">
           Show
           <div class="mx-2 d-inline-block">
@@ -63,10 +68,10 @@
                     {{ $item->birthday }}
                 </td>
                 <td data-label="Phone">
-                <div class="">{{ $item->phone }}</div>
+                <div>{{ $item->phone }}</div>
                 </td>
                 <td data-label="Password">
-                    <h5 data-countup>{{ $item->password }}</h5>
+                    <h5 >{{ $item->password }}</h5>
                 </td>
                 <td data-label="Level">
                     <div class="">
@@ -89,11 +94,13 @@
                 <td>
                   <div class="btn-list flex-nowrap">                  
                     <div class="dropdown">
-                      <button class="btn bg-cyan-lt dropdown-toggle align-text-top" data-boundary="viewport" data-toggle="dropdown">Actions</button>
+                      <button class="btn bg-cyan-lt dropdown-toggle align-text-top dropdown-menu-right" data-boundary="viewport" data-toggle="dropdown"><span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-md" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"></path><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><circle cx="12" cy="12" r="3"></circle></svg></span>
+                      </button>
                       <div class="dropdown-menu">
                       <a class="btn btn-success" href="{{ route('user.show') }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('user.edit') }}">Edit</a>
-                        <a class="btn btn-warning nut-delete" href="{{ route('user.delete') }}">Delete</a>
+                        <a onclick="return confirmEdit(this)" class="btn btn-primary" href="{{ route('user.edit') }}">Edit</a>
+                        <a onclick="return confirmDelete(this)" class="btn btn-warning " href="{{ route('user.delete') }}">Delete</a>
                       </div>
                     </div>
                   </div>
@@ -105,10 +112,4 @@
         </table>
       </div>
   </div>
-  <script type="text/javascript">
-      $('.nut-delete').on('click',function(e){
-          e.preventDefault();
-          alert('Oke');
-      });
-  </script>
 @endsection

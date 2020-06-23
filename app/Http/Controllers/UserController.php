@@ -16,10 +16,12 @@ class UserController extends Controller
         return 'GET Giao diện hiển thị chi tiết 1 user admin/user/show/{?id}';
     }
     public function create(){
-        return 'GET Giao diện thêm 1 user vào admin/user/create';
+        return view('admin.user.create');
     }
     public function stote(){
-        return 'POST dữ liệu vừa thêm lưu vào db vào admin/user/save';
+        $data = request()->all();
+        dd($data);
+        // return 'POST dữ liệu vừa thêm lưu vào db vào admin/user/save';
     }
     public function edit(){
         return 'GET Day la giao dien sửa 1 user trong DB qua{$id} admin/user/edit{$id}';
