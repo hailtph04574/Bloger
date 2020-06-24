@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     protected $table = 'users';
+    protected $primaryKey = 'user_id'; 
     protected $fillable = [
         'name',
         'birthday',
@@ -16,13 +17,13 @@ class User extends Model
         'role',
         'is_active',
     ];
-    public function post(){
-        return $this->hasMany(Post::class,'user_id','post_id');
+    public function posts(){
+        return $this->hasMany(Post::class,'post_id','user_id');
     }
-    public function comment(){
-        return $this->hasMany(Comment::class,'user_id','comment_id');
+    public function comments(){
+        return $this->hasMany(Comment::class,'comment_id','user_id');
     }
-    public function category(){
-        return $this->hasMany(Category::class,'user_id','category_id');
+    public function categorys(){
+        return $this->hasMany(Category::class,'cate_id','user_id');
     }
 }

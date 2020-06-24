@@ -15,7 +15,7 @@
             <div>
               <div class="avatar-list avatar-list-stacked">
               <a href="{{ route('user.create') }}" class="btn btn-primary btn-sm">Add</a>
-                <a href="{{ route('user.edit') }}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{{ route('user.index') }}" class="btn btn-warning btn-sm">Edit</a>
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@
             <div>
               <div class="avatar-list avatar-list-stacked">
               <a href="{{ route('post.create') }}" class="btn btn-success btn-sm">Add</a>
-                <a href="{{ route('post.edit') }}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{{ route('post.index') }}" class="btn btn-warning btn-sm">Edit</a>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@
             <div>
               <div class="avatar-list avatar-list-stacked">
               <a href="{{ route('category.create') }}" class="btn btn-danger btn-sm">Add</a>
-                <a href="{{ route('category.edit') }}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{{ route('category.index') }}" class="btn btn-warning btn-sm">Edit</a>
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@
             <div>
               <div class="avatar-list avatar-list-stacked">
               <a href="{{ route('comment.create') }}" class="btn btn-primary btn-sm">Add</a>
-                <a href="{{ route('comment.edit') }}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{{ route('comment.index') }}" class="btn btn-warning btn-sm">Edit</a>
               </div>
             </div>
           </div>

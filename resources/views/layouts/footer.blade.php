@@ -3,7 +3,13 @@
     <footer>
        <ul class="menu-link">
            @foreach ($category as $key => $data)
-       <li><a href="#">{{ $data->cate_name ."." }}</a></li>     
+       <li><a href="#">
+       {{"."}}
+       @foreach($data->categorys as $item)
+        {{ $item->cate_name }}
+       @endforeach
+       {{"." }}
+       </a></li>     
            @endforeach
           
        </ul>

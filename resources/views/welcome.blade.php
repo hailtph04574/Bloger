@@ -10,16 +10,20 @@
              <a href="#"><i class="icon-envelope"></i></a>
           </div>
           <div class="col-md-12 content-page">
-              @foreach ($post as $key => $data)
+              @foreach ($user as $data)
                   <!-- Blog Post Start -->
              <div class="col-md-12 blog-post">
                 <div class="post-title">
                    <a href="#">
-                   <h1>{{ $data->title }}</h1>
+                   <h1>
+                   @foreach ($data->posts as $item)
+                        {{ $item->title }}
+                     @endforeach
+                   </h1>
                    </a>
                 </div>
                 <div class="post-info">
-                <span>{{ $data->created_at }} / by <a href="#" target="_blank"> {{ $data->name }} have id = {{ $data->user_id }}</a></span>
+                <span>{{ $data->created_at }} / by Author <a href="#" target="_blank">  {{ $data->name }}</a></span>
                 </div>
             <p>{{ $data->content }}</p>
                 <a href="#" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>

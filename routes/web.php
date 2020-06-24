@@ -18,7 +18,7 @@ use App\Model\Comment;
 */
 
 Route::get('/', function () {
-    $test = User::with(['post','category','comment'])->get();
+    $test = User::with(['posts','comments','categorys'])->get();
     // dd($test);
     $user = User::all();
     $post = Post::all();
@@ -26,10 +26,10 @@ Route::get('/', function () {
     $comment = Comment::all();
     // dd($user);
     return view('welcome',[
-        'user'=> $user,
-        'post'=> $post,
-        'category'=> $category,
-        'comment'=> $comment,
+        'user'=> $test,
+        'post'=> $test,
+        'category'=> $test,
+        'comment'=> $test,
         ]);
 });
 Route::get('/admin', function(){
@@ -51,12 +51,12 @@ Route::group(['prefix' => 'admin/'], function(){
 
     Route::group(['prefix' => 'user'],function(){
         Route::get('/','UserController@index')->name('user.index');
-        Route::get('show','UserController@show')->name('user.show');
+        Route::get('show/{user_id}','UserController@show')->name('user.show');
         Route::get('create','UserController@create')->name('user.create');
         Route::get('stote','UserController@stote')->name('user.save');
-        Route::get('edit','UserController@edit')->name('user.edit');
-        Route::get('update','UserController@update')->name('user.update');
-        Route::get('delete','UserController@update')->name('user.delete');
+        Route::get('edit/{user_id}','UserController@edit')->name('user.edit');
+        Route::post('update/{user_id}','UserController@update')->name('user.update');
+        Route::get('delete/{user}','UserController@delete')->name('user.delete');
     });
 
     Route::group(['prefix' => 'category'],function(){
