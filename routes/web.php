@@ -48,7 +48,6 @@ Route::get('/admin', function(){
 })->name('admin.index');
 
 Route::group(['prefix' => 'admin/'], function(){
-
     Route::group(['prefix' => 'user'],function(){
         Route::get('/','UserController@index')->name('user.index');
         Route::get('show/{user_id}','UserController@show')->name('user.show');
@@ -59,39 +58,14 @@ Route::group(['prefix' => 'admin/'], function(){
         Route::get('delete/{user}','UserController@delete')->name('user.delete');
     });
 
-    Route::group(['prefix' => 'category'],function(){
-        Route::get('/','CategoryController@index')->name('category.index');
-        Route::get('show','CategoryController@show')->name('category.show');
-        Route::get('create','CategoryController@create')->name('category.create');
-        Route::get('stote','CategoryController@stote')->name('category.save');
-        Route::get('edit','CategoryController@edit')->name('category.edit');
-        Route::get('update','CategoryController@update')->name('category.update');
-        Route::get('delete','CategoryController@update')->name('category.delete');
-    });
-    
-    Route::group(['prefix' => 'comment'],function(){
-        Route::get('/','CommentController@index')->name('comment.index');
-        Route::get('show','CommentController@show')->name('comment.show');
-        Route::get('create','CommentController@create')->name('comment.create');
-        Route::get('stote','CommentController@stote')->name('comment.save');
-        Route::get('edit','CommentController@edit')->name('comment.edit');
-        Route::get('update','CommentController@update')->name('comment.update');
-        Route::get('delete','CommentController@update')->name('comment.delete');
-    });
-
-    Route::group(['prefix' => 'post'],function(){
-        Route::get('/','PostController@index')->name('post.index');
-        Route::get('show','PostController@show')->name('post.show');
-        Route::get('create','PostController@create')->name('post.create');
-        Route::get('stote','PostController@stote')->name('post.save');
-        Route::get('edit','PostController@edit')->name('post.edit');
-        Route::get('update','PostController@update')->name('post.update');
-        Route::get('delete','PostController@update')->name('post.delete');
-    });
-    
+        
     
 });
 
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
