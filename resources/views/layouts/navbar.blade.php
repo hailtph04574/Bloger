@@ -3,11 +3,9 @@
        <ul class="menu-link">
           @foreach ($category as $data)
        <li><a href="#">
-       {{"."}}
        @foreach($data->categorys as $item)
         {{ $item->cate_name }}
        @endforeach
-       {{"." }}
        </a></li>    
           @endforeach
           

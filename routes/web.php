@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 use App\Model\User;
 use App\Model\Post;
 use App\Model\Category;
@@ -18,7 +20,8 @@ use App\Model\Comment;
 */
 
 Route::get('/', function () {
-    $test = User::with(['posts','comments','categorys'])->get();
+    // $user1 = Auth::user();
+        $test = User::with(['posts','comments','categorys'])->get();
     // dd($test);
     $user = User::all();
     $post = Post::all();

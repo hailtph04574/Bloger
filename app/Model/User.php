@@ -3,8 +3,11 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-
-class User extends Model
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use HasRoles;
+class User extends Authenticatable
 {
     protected $table = 'users';
     protected $primaryKey = 'user_id'; 

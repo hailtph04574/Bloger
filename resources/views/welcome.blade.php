@@ -25,7 +25,7 @@
                 <div class="post-info">
                 <span>{{ $data->created_at }} / by Author <a href="#" target="_blank">  {{ $data->name }}</a></span>
                 </div>
-            <p>{{ $data->content }}</p>
+            <p>{{ $item->content }}</p>
                 <a href="#" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
              </div>
              <!-- Blog Post End -->
