@@ -35,7 +35,8 @@ Route::get('/', function () {
         'comment'=> $test,
         ]);
 });
-Route::get('/admin', function(){
+
+Route::get('admin', function(){
     
     $user = User::all();
     $post = Post::all();
@@ -50,8 +51,7 @@ Route::get('/admin', function(){
         ]);
 })->name('admin.index');
 
-Route::group(['prefix' => 'admin/'], function(){
-
+Route::group(['prefix'=>'admin/'],function(){
     Route::group(['prefix' => 'user'],function(){
         Route::get('/','UserController@index')->name('user.index');
         Route::get('show/{user_id}','UserController@show')->name('user.show');
@@ -61,40 +61,35 @@ Route::group(['prefix' => 'admin/'], function(){
         Route::post('update/{user_id}','UserController@update')->name('user.update');
         Route::get('delete/{user}','UserController@delete')->name('user.delete');
     });
+    Route::group(['prefix' => 'post'],function(){
+        Route::get('/','PostController@index')->name('post.index');
+        Route::get('show/{post_id}','PostController@show')->name('post.show');
+        Route::get('create','PostController@create')->name('post.create');
+        Route::get('stote','PostController@stote')->name('post.save');
+        Route::get('edit/{post_id}','PostController@edit')->name('post.edit');
+        Route::post('update/{post_id}','PostController@update')->name('post.update');
+        Route::get('delete/{post}','PostController@delete')->name('post.delete');
+    });
 
     Route::group(['prefix' => 'category'],function(){
         Route::get('/','CategoryController@index')->name('category.index');
-        Route::get('show','CategoryController@show')->name('category.show');
+        Route::get('show/{post_id}','CategoryController@show')->name('category.show');
         Route::get('create','CategoryController@create')->name('category.create');
         Route::get('stote','CategoryController@stote')->name('category.save');
-        Route::get('edit','CategoryController@edit')->name('category.edit');
-        Route::get('update','CategoryController@update')->name('category.update');
-        Route::get('delete','CategoryController@update')->name('category.delete');
+        Route::get('edit/{cate_id}','CategoryController@edit')->name('category.edit');
+        Route::post('update/{cate_id}','CategoryController@update')->name('category.update');
+        Route::get('delete/{category}','CategoryController@delete')->name('category.delete');
     });
-    
+
     Route::group(['prefix' => 'comment'],function(){
         Route::get('/','CommentController@index')->name('comment.index');
-        Route::get('show','CommentController@show')->name('comment.show');
+        Route::get('show/{post_id}','CommentController@show')->name('comment.show');
         Route::get('create','CommentController@create')->name('comment.create');
         Route::get('stote','CommentController@stote')->name('comment.save');
-        Route::get('edit','CommentController@edit')->name('comment.edit');
-        Route::get('update','CommentController@update')->name('comment.update');
-        Route::get('delete','CommentController@update')->name('comment.delete');
+        Route::get('edit/{comment_id}','CommentController@edit')->name('comment.edit');
+        Route::post('update/{comment_id}','CommentController@update')->name('comment.update');
+        Route::get('delete/{comment}','CommentController@delete')->name('comment.delete');
     });
-
-    Route::group(['prefix' => 'post'],function(){
-        Route::get('/','PostController@index')->name('post.index');
-        Route::get('show','PostController@show')->name('post.show');
-        Route::get('create','PostController@create')->name('post.create');
-        Route::get('stote','PostController@stote')->name('post.save');
-        Route::get('edit','PostController@edit')->name('post.edit');
-        Route::get('update','PostController@update')->name('post.update');
-        Route::get('delete','PostController@update')->name('post.delete');
-    });
-    
-    
 });
-
-
-
-
+Route::get('show', 'ExportController@show')->name('show');
+Route::get('export', 'ExportController@export')->name('export');
