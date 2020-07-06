@@ -9,7 +9,7 @@
         <div class="card">
           <div class="card-body p-4 py-5 text-center">
             <span class="avatar avatar-xl mb-4 bg-green-lt">USER</span>
-            <p class=" bg-blue-lt">Hiện có {{ count($user) }} account</p>
+            <p class=" bg-blue-lt">Now ! We are have {{ count($user) }} account</p>
             <p class="mb-3">
             </p>
             <div>
@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="progress card-progress">
-            <div class="progress-bar bg-green" style="width: 100%" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-green" style="width: {{ count($user) }}%" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
               <span class="sr-only">{{ count($user) }}% Complete</span>
             </div>
           </div>
@@ -32,7 +32,7 @@
         <div class="card">
           <div class="card-body p-4 py-5 text-center">
             <span class="avatar avatar-xl mb-4 bg-pink-lt">POST</span>
-            <p class=" bg-green-lt">Hiện có {{ count($post) }} bài viết</p>
+            <p class=" bg-green-lt">Now ! We are have {{ count($post) }} bài viết</p>
             <p class="mb-3">
             </p>
             <div>
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="progress card-progress">
-            <div class="progress-bar bg-pink" style="width: 100%" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-pink" style="width: {{ count($post) }}%" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
               <span class="sr-only">{{ count($post) }}% Complete</span>
             </div>
           </div>
@@ -54,7 +54,7 @@
         <div class="card">
           <div class="card-body p-4 py-5 text-center">
             <span class="avatar avatar-xl mb-4 bg-indigo-lt">CATEGORY</span>
-            <p class=" bg-pink-lt">Hiện có {{ count($category) }} thẻ</p>
+            <p class=" bg-pink-lt">Now ! We are have {{ count($category) }} thẻ</p>
             <p class="mb-3">
             </p>
             <div>
@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="progress card-progress">
-            <div class="progress-bar bg-indigo" style="width: 100%" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-indigo" style="width: {{ count($category) }}%" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
               <span class="sr-only">{{ count($category) }}% Complete</span>
             </div>
           </div>
@@ -76,7 +76,7 @@
         <div class="card">
           <div class="card-body p-4 py-5 text-center">
             <span class="avatar avatar-xl mb-4 bg-yellow-lt">COMMENT</span>
-            <p class=" bg-indigo-lt">Hiện có {{ count($comment) }} bình luận</p>
+            <p class=" bg-indigo-lt">Now ! We are have {{ count($comment) }} bình luận</p>
             <p class="mb-3">
             </p>
             <div>
@@ -87,7 +87,7 @@
             </div>
           </div>
           <div class="progress card-progress">
-            <div class="progress-bar bg-yellow" style="width: 100%" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-yellow" style="width: {{ count($comment) }}%" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
               <span class="sr-only">{{ count($comment) }}% Complete</span>
             </div>
           </div>

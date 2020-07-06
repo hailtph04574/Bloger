@@ -13,10 +13,10 @@ class Comment extends Model
         'is_active',
     ];
     public function users(){
-        return $this->belongsTo(User::class,'comment_id');
+        return $this->belongsTo(User::class,'user_id','comment_id');
     }
     public function posts(){
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Post::class,'post_id','comment_id');
     }
     
     

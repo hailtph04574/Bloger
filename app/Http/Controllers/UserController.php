@@ -46,6 +46,7 @@ class UserController extends Controller
         $params['password'] = request()->get('password');
         $params['role'] = request()->get('role');
         $params['is_active'] = request()->get('is_active');
+        // dd($params);
         $users->update($params);
         return redirect()->route('user.index');
     }

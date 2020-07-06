@@ -84,23 +84,19 @@
             <div class="col">
                 <select class="form-select" name="is_active">
                 <option value="0"
-            <?php
-                if($user->is_active == 1){
-                    echo 'selected';
-                }elseif($user->is_active == 0){
-                    echo '';
-                }
-            ?>
-            >Active</option>
-            <option value="1" 
-            <?php
-                if($user->is_active == 1){
-                    echo '';
-                }elseif($user->is_active == 0){
-                    echo 'selected';
-                }
-            ?>
-            >De-Avtive</option>
+                @if($user->is_active == 0)
+                      selected
+                @elseif($user->is_active == 1)
+                  
+                @endif
+                >De-Active</option>
+                <option value="1"
+                @if($user->is_active == 0)
+                   
+                @elseif($user->is_active == 1)
+                  selected
+                @endif
+                >Active</option>
                 </select>
               </div>
         </div>

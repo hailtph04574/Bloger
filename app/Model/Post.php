@@ -13,12 +13,12 @@ class Post extends Model
         'content',
     ];
     public function users(){
-        return $this->belongsTo(User::class,'post_id');
+        return $this->belongsTo(User::class,'user_id','post_id');
     }
     public function comments(){
         return $this->hasMany(Comment::class);
     }
     public function categorys(){
-        return $this->hasMany(Category::class);
+        return $this->belongsTo(Category::class,'post_id');
     }
 }

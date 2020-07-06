@@ -17,21 +17,24 @@
                    <a href="#">
                    <h1>
                    @foreach ($data->posts as $item)
+                   {{-- {{ dd($data) }} --}}
                         {{ $item->title }}
                      @endforeach
                    </h1>
                    </a>
                 </div>
                 <div class="post-info">
-                <span>{{ $data->created_at }} / by Author <a href="#" target="_blank">  {{ $data->name }}</a></span>
-                </div>
-            <p>{{ $item->content }}</p>
-                <a href="#" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
-             </div>
+                <span>{{ $data->created_at }} / by Author <a href="#" target="_blank">  {{ $data->name }}</a></span></br>
+                @foreach ($data->categorys as $item)
+                <span>by Category -- <a href="#" target="_blank">{{ $item->cate_name }}</a></span>
+                @endforeach
+               </div>
+                  <p>{{ $item->content }}</p>
+                  <a href="#" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+               </div>
              <!-- Blog Post End -->
               @endforeach
-             
-             
+
              <div class="col-md-12 text-center">
                 <a href="javascript:void(0)" id="load-more-post" class="load-more-button">Load</a>
                 <div id="post-end-message"></div>

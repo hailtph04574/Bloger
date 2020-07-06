@@ -12,9 +12,9 @@ class Category extends Model
         'cate_name',
     ];
     public function users(){
-        return $this->belongsTo(User::class,'cate_id');
+        return $this->belongsTo(User::class,'user_id','cate_id');
     }
     public function posts(){
-        return $this->belongsTo(Post::class,'cate_id');
+        return $this->hasMany(Post::class,'post_id','cate_id');
     }
 }

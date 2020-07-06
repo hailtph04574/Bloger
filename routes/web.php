@@ -20,14 +20,11 @@ use App\Model\Comment;
 */
 
 Route::get('/', function () {
-    // $user1 = Auth::user();
-        $test = User::with(['posts','comments','categorys'])->get();
-    // dd($test);
     $user = User::all();
     $post = Post::all();
     $category = Category::all();
     $comment = Comment::all();
-    // dd($user);
+    $test = User::with('posts','categorys','comments')->get();
     return view('welcome',[
         'user'=> $test,
         'post'=> $test,
@@ -37,7 +34,6 @@ Route::get('/', function () {
 });
 
 Route::get('admin', function(){
-    
     $user = User::all();
     $post = Post::all();
     $category = Category::all();
@@ -50,6 +46,9 @@ Route::get('admin', function(){
         'comment'=> $comment,
         ]);
 })->name('admin.index');
+
+Route::get('login','AuthController@login')->name('login');
+Route::get('register','AuthController@register')->name('register');
 
 Route::group(['prefix'=>'admin/'],function(){
     Route::group(['prefix' => 'user'],function(){

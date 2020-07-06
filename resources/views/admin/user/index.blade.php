@@ -84,10 +84,10 @@
                 </td>
                 <td data-label="Active">
                     <div class="">
-                        @if ($item->is_active == 1)
-                            <cite class="bg-green-lt" >Active</cite>
+                        @if ($item->is_active === 0)
+                            <cite class="bg-red-lt">De-Active</cite>
                         @else
-                        <cite class="bg-red-lt" >De-Active</cite>    
+                            <cite class="bg-green-lt" >Active</cite>    
                         @endif
                     </div>
                 </td>
